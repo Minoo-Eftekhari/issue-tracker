@@ -54,13 +54,14 @@ const NewIssuePage = () => {
         <ErrorMessage>{errors.title?.message}</ErrorMessage>
 
         <Controller
+         
           name="description"
           control={control}
-          render={(field) => <SimpleMDE placeholder="Description" {...field} />}
+          render={({field}) => <SimpleMDE   placeholder="Description" {...field} />}
         />
         <ErrorMessage>{errors.description?.message}</ErrorMessage>
         <Button disabled={isSubmitting}>
-          Submit New Issue {isSubmitting && <Spinner/>}
+          Submit New Issue {isSubmitting && <Spinner />}
         </Button>
       </form>
     </div>
